@@ -1,0 +1,42 @@
+
+1) Package.JSON: Ye Project ke information rakhta h. ye gum ho gai to masla hoga. ye imp file h. isko npm use krta h
+2) next.config.mjs: NextJs ke configration hum is file me krty h
+3) Jsconfig.json: isko JS ke config hogi
+4) README.md: Project ke instruction dety ho usko use kesy krna h kha par kia rakhna h
+5) package-lock.json: Pkg ke details rakhta h.
+6) .gitignore: jo file git par nh dalna chaty uska path idr dal do
+7) .eslintrc.json: ye ES ka module h jaha ap likh skty hok muja ye chz chiaye ya nh chaye. Like apny bol dia k jitny be unuse varibale h isko idenrify kro. va use nh kro etc. ye kese be JS ke library or frame work me sue ho skta h.
+8) .next: build related chezy yaha mely gi. build banny k bd hamara code isi folder k ander jye ga.
+9) Public: Public chey dalskty ho html, image etc 
+10) src: prject ka root
+
+dependencies vs dev-dep: dependencies hamari dev or prduction mood par dono jgha use hoti h but dev-dep me productn use mw vo lib use nh hogi
+
+
+Server Component: 
+1) Render on the server side
+2) By default, all component are server components 
+3) They are closer to the backend 
+4) so BE-related logic and code should write in server components
+
+
+Client Component: 
+1) Render on the client side
+2) can make client compoonent with 'use client' directive
+3) ALL UI-related code and events should should be written here 
+4) so BE-related logic and code should write in server components
+
+Component type based on rendering: only 2 
+Can we use bothcomp together: yes 
+bary chezy SSR choti chezy CSR
+
+What do you need to do?	             	
+Fetch data:  Server Component		
+Access backend resources (directly):  Server Component	
+Keep sensitive information on the server (access tokens, API keys, etc):  Server Component	
+Keep large dependencies on the server / Reduce client-side JavaScript:  Server Component		
+Add interactivity and event listeners (onClick(), onChange(), etc): Client Component		
+Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc): Client Component
+Use browser-only APIs: Client Component	
+Use custom hooks that depend on state, effects, or browser-only APIs: Client Component		
+Use React Class components: Client Component

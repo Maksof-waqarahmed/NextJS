@@ -1,0 +1,7 @@
+what is Component: It is a piece of code. we can use it again and again. There are 2 types of component in react (function & class Component).
+
+props: To pass data from one component to another 
+
+D/B JS & TS: JS can declare a type to see data but in TS you first define data types than store and browser can't udnerstand Ts directly it convert into JS then execute. 
+
+SSR/CSR: 

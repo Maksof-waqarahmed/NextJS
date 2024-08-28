@@ -1,0 +1,85 @@
+//Folder ka name jo ap route bannana chaty ho vohi name likho gy like about, home, login ye basic routing hoti h is lye isko file based routing khety h. ab is foldr k ander jo file bane gy usa name lazmi page.js hona chaiye jbi file based routing hogi 
+
+// NextJs k lye file system bases routing hoti h koi external pkg ke need nh hoti
+
+
+export default function Home() {
+
+  return (
+    <main className={styles.main}>
+      <h1>Basic Routing | New Page</h1>
+    </main>
+  );
+}
+
+
+export default function About() {
+
+    return (
+      <main>
+        <h1>About Page</h1>
+      </main>
+    );
+  }
+
+  export default function Login() {
+    return (
+      <main>
+        <h1>Login Page</h1>
+      </main>
+    );
+  }
+
+  ====================================================================================
+
+  'use client' // hooks use kr rhy h jbi client lagaya
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+export default function Home() {
+  const router = useRouter();
+  const navigate = (name) => {
+    router.push(name)
+  }
+  return (
+    <main>
+      <h1>Linking & Navigation</h1>
+      <Link href='/login'>Go to Login Page</Link> 
+      <br/>
+      <br/>
+      <Link href='/about'>Go to About Page</Link>
+      <br/>
+      <br/>
+      {/* <button onClick={() => router.push('/login')}>Go to Login Page</button> */}
+      <button onClick={() => navigate('/login')}>Go to Login Page</button>
+      <br/>
+      <br/>
+      {/* <button onClick={() => router.push('/about')}>Go to About Page</button> */}
+      <button onClick={() => navigate('/about')}>Go to About Page</button>
+    </main>
+  );
+}
+
+//Linking: when we use anchor tag to move one page to another
+//Navigation: When we navigate to click on button 
+
+
+import Link from "next/link";
+export default function Login() {
+  return (
+    <main>
+      <h1>Login Page</h1>
+      <Link href='/'>Go to Home Page</Link>
+    </main>
+  );
+}
+
+import Link from "next/link";
+export default function About() {
+
+  return (
+    <main>
+      <h1>About Page</h1>
+      <Link href='/'>Go to Home Page</Link>
+    </main>
+  );
+}

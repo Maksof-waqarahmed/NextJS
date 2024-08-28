@@ -1,0 +1,21 @@
+import styles from "./page.module.css";
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+      <User name="Waqar Rana"/>
+      <User name="Ahad Ali"/>
+      <User name="Hamza Sheikh"/>
+      <h1>Home page</h1>
+    </main>
+  );
+}
+
+const User = (props) => {
+  return(
+    <div>
+      <h1>User Name is {props.name} </h1>
+    </div>
+  )
+  
+}

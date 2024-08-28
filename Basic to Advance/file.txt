@@ -1,0 +1,5 @@
+1) Download and install NODEJS
+2) Install NEXTJSwith npx
+3) Config NEXTJS setup
+5) Run Project
+6) Make First change in the app

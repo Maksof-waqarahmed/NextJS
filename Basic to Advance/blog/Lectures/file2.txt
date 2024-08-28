@@ -1,0 +1,57 @@
+'use client' //Is compoent ko as a client side renderig krwane k lye use hota h. ye always top par he define hoga. ab iski jo child files hogi us k ander muja ye bar bar use krne ke need nh hogi (child means jo files is kannder import hogi)
+import styles from "./page.module.css";
+import { useState } from "react";
+
+export default function Home() {
+  // state: It like a container used only in component. if youw ant to send state data to other component so you can do it with props.
+  // State vs variable: Varibale Ke value update ho jaye gi but UI par render nh hogi but jb state ke value update hogi to vo zoor degi k page ko refresh kro or jo chnages aye h usko UI par show kro. state is imutale.
+  const [name, setName] = useState("Waqar");
+  let uName = "Ahmed";
+  const updateName = (name) => {
+    setName(name);
+    uName = "Rana";
+  }
+
+  //functions
+  // const apple = () => {
+  //   alert("Fruits");
+  // }
+  // const apple = (item) => {
+  //   alert(item);
+  // }
+
+
+  //Component k ander Component
+  const InnerComp = () => {
+    return(
+      <h1>Inner Component</h1>
+    )
+  }
+  return (
+    <main className={styles.main}>
+      <h1>Event, Function & State</h1>
+      {/* State */}
+      <h1>{name}</h1> 
+      <button onClick={() => updateName("rana")}>Click</button>
+      {/* Varibale  */}
+      <h1>{uName}</h1>
+
+      {/* Function */}
+      {/* <button onClick={() => apple("fruits")}>Click</button> */}
+
+      {/* Event */}
+      {/* <button onClick={() => alert("Clicked")}>Click</button> */}
+
+      {/* Inner Comp  */}
+      <InnerComp />
+      {/* {InnerComp()} */}
+
+
+    </main>
+  );
+}
+/*When you use <Component /> in your JSX, you are treating it as a React component. This means that React will create an instance of the component and manage its state and lifecycle. It can accept props just like any other React component. This is the recommended way to use components in React.
+
+When you use {Component()} in your JSX, you are treating it as a JavaScript function call. It is not treated as a React component. This means that React will execute the Component function immediately and render the JSX returned by that function. It does not have access to React's state management or lifecycle methods.
+
+In this case, you cannot pass props directly to Component, and it will not behave like a typical React component. It's just a function that returns JSX, and it gets called whenever your main component (Home in this case) re-renders. */
